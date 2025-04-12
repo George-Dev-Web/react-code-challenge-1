@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import ExpenseList from "./components/ExpenseList";
+import ExpenseForm from "./components/ExpenseForm";
+
+const dummyExpenses = [
+  { id: 1, title: "Groceries", amount: 50, date: "2025-04-01" },
+  { id: 2, title: "Netflix", amount: 15, date: "2025-04-03" },
+  { id: 3, title: "Transport", amount: 25, date: "2025-04-05" },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [expenses, setExpenses] = useState(dummyExpenses);
+
+  const addExpense = (newExpense) => {
+    setExpenses([newExpense, ...expenses]);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div style={{ padding: "20px" }}>
+      <h1>💸 Expense Tracker</h1>
+      <ExpenseForm onAddExpense={addExpense} />
+      <ExpenseList items={expenses} />
+    </div>
+  );
 }
 
-export default App
+export default App;
