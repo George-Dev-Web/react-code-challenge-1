@@ -27,13 +27,6 @@
   padding: 20px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: none;
-  color: white;
-}
-
 th,
 td {
   border: 1px solid #ddd;
@@ -82,4 +75,29 @@ td {
 .search-input {
   max-width: 200px;
   padding: 5px;
+}
+
+.app-content {
+  display: flex;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  /* Adjust breakpoint as needed */
+  .app-content {
+    flex-direction: column; /* Stack form and list vertically */
+  }
+
+  .expense-form,
+  .expense-list {
+    width: 100%; /* Make them take full width */
+    margin-right: 0; /* Remove right margin on form */
+    padding: 10px; /* Reduce padding */
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto; /* Enable horizontal scroll */
 }
