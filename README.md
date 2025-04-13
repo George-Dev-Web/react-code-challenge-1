@@ -8,7 +8,7 @@ This is a React-based web application designed to help users track their expense
 - [Technologies Used](#technologies-used)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Running the Application](#running-the-application)
+- [Running the Application](#running-the-application-to-run-the-application-in-development-mode)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
@@ -73,8 +73,7 @@ The table will update to show only the expenses that match the search query.
 Project Structure
 expense-tracker/
 ├── public/
-│ └── index.html
-│ └── ...
+|
 ├── src/
 │ ├── components/
 │ │ ├── ExpenseForm.jsx
@@ -83,10 +82,10 @@ expense-tracker/
 │ │ └── ...
 │ ├── App.jsx
 │ ├── App.css
-│ ├── index.js
+│ ├── main.jsx
 │ ├── index.css
 │ └── ...
-├── package.json
+|
 ├── README.md
 └── ...
 public/index.html: The main HTML file.
