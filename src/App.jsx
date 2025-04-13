@@ -1,26 +1,31 @@
-import { useState } from "react";
-import ExpenseList from "./components/ExpenseList";
+import React, { useState } from "react";
 import ExpenseForm from "./components/ExpenseForm";
+import ExpenseList from "./components/ExpenseList";
+import "./App.css";
 import "./index.css";
 
-const dummyExpenses = [
-  { id: 1, title: "Groceries", amount: 50, date: "2025-04-01" },
-  { id: 2, title: "Netflix", amount: 15, date: "2025-04-03" },
-  { id: 3, title: "Transport", amount: 25, date: "2025-04-05" },
-];
-
 function App() {
-  const [expenses, setExpenses] = useState(dummyExpenses);
+  const [expenses, setExpenses] = useState([]);
 
   const addExpense = (newExpense) => {
-    setExpenses([newExpense, ...expenses]);
+    setExpenses([...expenses, newExpense]);
   };
 
+  console.log("Expenses in App:", expenses);
+
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>💸 Expense Tracker</h1>
-      <ExpenseForm onAddExpense={addExpense} />
-      <ExpenseList items={expenses} />
+    <div className="app">
+      <header className="app-header">
+        <h1>Expense Tracker</h1>
+        <p>
+          Start taking control of your finances and life. Success begins with
+          clarity about your spending.
+        </p>
+      </header>
+      <div className="app-content">
+        <ExpenseForm addExpense={addExpense} />
+        <ExpenseList expenses={expenses} />
+      </div>
     </div>
   );
 }

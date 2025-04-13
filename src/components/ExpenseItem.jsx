@@ -1,18 +1,14 @@
-function ExpenseItem({ title, amount, date }) {
+import React from "react";
+
+function ExpenseItem({ expense }) {
   return (
-    <div
-      style={{
-        border: "1px solid #ccc",
-        padding: "10px",
-        marginBottom: "10px",
-        borderRadius: "8px",
-        backgroundColor: "#f9f9f9",
-      }}
-    >
-      <h3>{title}</h3>
-      <p>💰 Amount: ${amount}</p>
-      <p>📅 Date: {new Date(date).toLocaleDateString()}</p>
-    </div>
+    <tr>
+      <td>{expense.name}</td>
+      <td>{expense.description}</td>
+      <td>{expense.category}</td>
+      <td>{expense.amount}</td>
+      <td>{expense.date}</td>
+    </tr>
   );
 }
 

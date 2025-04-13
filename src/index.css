@@ -6,8 +6,8 @@
 
 body {
   font-family: "Arial", sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+  background-color: black;
+  color: white;
   padding: 20px;
 }
 
@@ -60,14 +60,14 @@ p {
   margin: 5px 0;
 }
 
-/* Container for all the content */
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: none
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white;
 }
 
 @media (max-width: 768px) {
